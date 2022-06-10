@@ -1,0 +1,11 @@
+{
+  "name": "rain_reminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "author": "raika takano",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
