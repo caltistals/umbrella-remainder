@@ -1,4 +1,4 @@
-function get_weather(latitude, longitude) {
+async function get_weather(latitude, longitude) {
   const request = require("request");
   const URL = "https://map.yahooapis.jp/weather/V1/place?";
   const coordinates = "coordinates=" + latitude + "," + longitude;
@@ -6,20 +6,18 @@ function get_weather(latitude, longitude) {
   const api_key =
     "&appid=dj00aiZpPWd6R1lqejFjYTBFQiZzPWNvbnN1bWVyc2VjcmV0Jng9ZTg-";
   const uri = URL + coordinates + output_type + api_key;
+  let res;
 
   request.get(
     {
       uri: uri,
     },
-    function (err, req, data) {
-      const parse_data = JSON.parse(data);
-      console.log(parse_data["Feature"][0]["Geometry"]);
-      for(let i = 0; i < 7; i++)
-      {
-        console.log(parse_data['Feature'][0]['Property']['WeatherList']['Weather'][i]['Date'])
-        console.log(parse_data['Feature'][0]['Property']['WeatherList']['Weather'][i]['Rainfall'])
-      }
+    await function (err, req, data) {
+      res = JSON.parse(data);
+      // console.log(res);
     }
   );
+  console.log(res);
+  return res;
 }
 module.exports = get_weather;
