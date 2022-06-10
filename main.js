@@ -1,4 +1,4 @@
-const get_weather = require("./scripts/get_weather")
+const get_weather = require("./scripts/get_weather")  
 const express = require('express')
 const app = express()
 const port = 3000
