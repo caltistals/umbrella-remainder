@@ -4,12 +4,22 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script type="module" src="js/watch_location.js"></script>
+	<link rel="stylesheet" href="./styles.css">
+	<script type="module" src="./js/get_weather_by_meteo.js"></script>
+	<script type="module" src="./js/watch_location.js"></script>
+	
 	<title>Document</title>
 </head>
 <body>
-	<div id="latitude"></div>
-	<div id="longitude"></div>
-	<div id="speed"></div>
+	<header>
+		<h3 class="headline">傘知らせるくん</h1>
+	</header>
+	<div class = "noticeWrapper">
+		<p id = "notice" class ="noticeMessage">現在は傘は必要ありません</p>
+	</div>
+	<div class = "noticeWrapper">	
+		<p id = "weather1" class ="weatherMessage">データを取得中...</p>
+		<p id = "weather2" class ="weatherMessage">データを取得中...</p>
+	</div>
 </body>
 </html>

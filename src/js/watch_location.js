@@ -1,4 +1,4 @@
-// import { get_weather } from "./get_weather.js";
+import get_weather from "./get_weather_by_meteo.js";
 
 // リアルタイムで位置情報を取得
 let syncerWatchPosition = {
@@ -18,15 +18,6 @@ let result = {
     speed: null
 };
 
-function displayInfo(result) {
-  const latitude = document.getElementById("latitude");
-  const longitude = document.getElementById("longitude");
-  const speed = document.getElementById("speed");
-  latitude.innerHTML = "緯度: " + result.latitude;
-  longitude.innerHTML = "経度: " + result.longitude;
-  speed.innerHTML = "速度: " + result.speed;
-}
-
 // 位置情報の取得に成功したとき
 function successFunc(position) {
   console.log("位置情報の取得に成功");
@@ -43,8 +34,10 @@ function successFunc(position) {
   result.longitude = position.coords.longitude;
   //速度
   result.speed = position.coords.speed;
-  displayInfo(result);
-  // get_weather(result.latitude,result.longitude);
+
+  get_weather(result.latitude,result.longitude);
+  
+
 }
 
 // 位置情報の取得に失敗したとき

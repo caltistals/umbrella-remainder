@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif;
+    background-color: rgb(241, 245, 247);
+    margin: 0;
+}
+  
+header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 203, 224);
+}
+
+.headline {
+    color: rgb(75, 73, 73);
+}
+
+.noticeWrapper {
+    border-radius: 5px;
+    margin: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    flex-direction: column;
+}
