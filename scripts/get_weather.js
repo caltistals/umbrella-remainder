@@ -1,4 +1,4 @@
-async function get_weather(latitude, longitude) {
+function get_weather(latitude, longitude) {
   const request = require("request");
   const URL = "https://map.yahooapis.jp/weather/V1/place?";
   const coordinates = "coordinates=" + latitude + "," + longitude;
@@ -12,7 +12,7 @@ async function get_weather(latitude, longitude) {
     {
       uri: uri,
     },
-    await function (err, req, data) {
+    function (err, req, data) {
       res = JSON.parse(data);
       // console.log(res);
     }

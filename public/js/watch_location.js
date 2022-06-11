@@ -16,6 +16,7 @@ function displayInfo( result ) {
 
 // 位置情報の取得に成功したとき
 function successFunc(position) {
+    console.log("位置情報の取得に成功");
     var result = {};
     ++syncerWatchPosition.count ; // 処理回数をインクリメント
 	var nowTime = ~~( new Date() / 1000 ) ;	// UNIX Timestamp
@@ -31,8 +32,7 @@ function successFunc(position) {
     result.longitude = position.coords.logitude;
     //速度
     result.speed = position.coords.speed;
-    
-
+    displayInfo(result);
 }
 
 
