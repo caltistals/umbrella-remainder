@@ -28,3 +28,11 @@ header {
     background-color: white;
     flex-direction: column;
 }
+
+.disc {
+    margin: 40px;
+}
+
+.discMes {
+    text-align: center;
+}

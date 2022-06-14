@@ -35,7 +35,9 @@ function successFunc(position) {
   //速度
   result.speed = position.coords.speed;
 
-  get_weather(result.latitude,result.longitude);
+  // 移動を検知したとき
+    get_weather(result.latitude,result.longitude);
+  
   
 
 }
@@ -52,4 +54,9 @@ function errorFunc(error) {
   console.error(errorMessage[error.code]);
 }
 
-navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+var watchID = navigator.geolocation.watchPosition(successFunc, errorFunc, optionObj);
+
+// 位置情報の取得を停止
+export function stop() {
+  navigator.geolocation.clearWatch(watchID);
+}

@@ -5,21 +5,32 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./styles.css">
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="module" src="./js/send_mail.js"></script>
 	<script type="module" src="./js/get_weather_by_meteo.js"></script>
-	<script type="module" src="./js/watch_location.js"></script>
-	
-	<title>Document</title>
+	<script type="module" src="./js/watch_location.js"></script>	
+	<title>傘知らせるくん</title>
 </head>
 <body>
 	<header>
 		<h3 class="headline">傘知らせるくん</h1>
 	</header>
-	<div class = "noticeWrapper">
+	<div class="disc">
+		<p class="discMes">移動を検知して傘が必要かどうか知らせます。</h3>
+		<p class="discMes">メールアドレスを登録して通知を送ることも可能です。</h3>
+	</div>
+	<div class = "noticeWrapper" id = "umbNotice">
 		<p id = "notice" class ="noticeMessage">現在は傘は必要ありません</p>
 	</div>
 	<div class = "noticeWrapper">	
 		<p id = "weather1" class ="weatherMessage">データを取得中...</p>
 		<p id = "weather2" class ="weatherMessage">データを取得中...</p>
 	</div>
+	<div class = "noticeWrapper">	
+		メール通知を受け取る場合、メールアドレスを入力してください
+		<input type="email" name="mail_field" id="mail_field" required>
+		<input type="button" id="mail_button" value="登録">
+	</div>
+	<script src="./js/register_email"></script>
 </body>
 </html>
