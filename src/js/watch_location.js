@@ -36,7 +36,7 @@ function successFunc(position) {
   result.speed = position.coords.speed;
 
   // 移動を検知したとき
-    get_weather(result.latitude,result.longitude);
+  if(result.speed > 0.1) get_weather(result.latitude,result.longitude);
   
   
 

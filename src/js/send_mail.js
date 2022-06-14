@@ -1,9 +1,9 @@
-
+// Smtp.js v3を使用してメールを送信
 export function send_email() {
     if(localStorage.mail){
         console.log("メールアドレスが存在します");
         Email.send({
-            SecureToken: "",
+            SecureToken: "", // https://www.smtpjs.com/ を参考に自身でトークンを取得してください
             To : localStorage.mail,
             From : "umbrella.remainder@gmail.com",
             Subject : "雨が降りそうです！",
