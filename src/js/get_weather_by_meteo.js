@@ -28,8 +28,8 @@ function displayInfo(json, hour) {
         notice.innerHTML = "傘が必要です！！";
         // umbrella.setAttribute("class", "fa-duotone fa-umbrella-simple");
         stop();
-        send_email();
-        
+        send_email(); 
+        alert("傘を持っていきましょう！");       
     }
     weather1.innerHTML = "現在の降水量: " + precipitation0 + " mm";
     weather2.innerHTML = "1時間後の降水量: "+ precipitation1 + " mm";
